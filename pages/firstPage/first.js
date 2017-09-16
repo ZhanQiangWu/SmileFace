@@ -7,7 +7,12 @@ Page({
     text : "内容",
     btnText: "按钮内容",
     show : false,
-    news: ['aaa', 'bbb', 'ccc']
+    news: ['aaa', 'bbb', 'ccc'],
+    templatedata: {
+      index: 0,
+      msg: 'this is a template',
+      time: '2016-09-15'
+    }
   },
 
   /**

@@ -1,4 +1,5 @@
 <include src="../templates/header" />
+<import src="../templates/msgtemplate.wxml"/>
 
 xxxxxxx
 
@@ -22,7 +23,10 @@ xxxxxxx
     <view >{{item}} block2</view>
 </block>
 
-<!-- <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
+<import src="../templates/footer.wxml"/> 
+<template  is="footer1"/>
+<template is="msgItem" data="{{...templatedata}}"/>
+ <!-- <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
 
     <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="j"> 
 
@@ -32,4 +36,4 @@ xxxxxxx
 
     </view>
 
-</view> -->
+</view>  -->
