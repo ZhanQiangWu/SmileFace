@@ -1,25 +1,19 @@
+
+//事件
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    text : "内容",
-    btnText: "学习列表",
-    show : false,
-    news: ['aaa', 'bbb', 'ccc'],
-    templatedata: {
-      index: 0,
-      msg: 'this is a template',
-      time: '2016-09-15'
-    }
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("onLoad")
+    
   },
 
   /**
@@ -69,18 +63,5 @@ Page({
    */
   onShareAppMessage: function () {
     
-  },
-
-  btnClick: function () {
-    console.log("按钮被点击了")
-    console.log("isShow:"+this.data.show)
-    var newsData = this.data.news;
-    newsData.shift();
-    this.setData({
-      text:"新内容",
-      show:!this.data.show,
-      news:newsData
-    });
   }
-
 })

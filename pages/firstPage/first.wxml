@@ -1,5 +1,6 @@
 <include src="../templates/header" />
 <import src="../templates/msgtemplate.wxml"/>
+<import src="../templates/footer.wxml"/> 
 
 xxxxxxx
 
@@ -23,8 +24,7 @@ xxxxxxx
     <view >{{item}} block2</view>
 </block>
 
-<import src="../templates/footer.wxml"/> 
-<template  is="footer1"/>
+<template  is="footer1" data="{{text:'导入的footer的值...'}}" />
 <template is="msgItem" data="{{...templatedata}}"/>
  <!-- <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
 
