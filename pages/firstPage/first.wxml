@@ -26,6 +26,9 @@ xxxxxxx
 
 <template  is="footer1" data="{{text:'导入的footer的值...'}}" />
 <template is="msgItem" data="{{...templatedata}}"/>
+<!-- 页面跳转 -->
+<navigator url='../mytest/mytest'>跳转到新页面</navigator>
+
  <!-- <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
 
     <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="j"> 

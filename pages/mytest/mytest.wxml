@@ -1,0 +1,6 @@
+<view style="text-align:center">{{title}}</view>
+<view wx:for="{{testArray}}">
+  <view class='testitem' bindtap='testItemClick' data-url='{{item.message}}'>
+    {{index}}:{{item.title}}
+  </view>
+</view>

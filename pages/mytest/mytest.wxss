@@ -1,0 +1,13 @@
+/* pages/mytest/mytest.wxss */
+
+.testitem{
+  display: flex;
+  height: 100rpx;
+  background-color: #6495ed;
+  margin-top:10rpx;
+  
+  /* 定义子元素在侧轴上对齐的方式 */
+  align-items: center; 
+  /* 定义子元素在主轴上面的对齐方式 */
+  justify-content: center
+}

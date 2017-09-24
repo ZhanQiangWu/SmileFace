@@ -1,25 +1,40 @@
+//测试列表
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    text : "内容",
-    btnText: "学习列表",
-    show : false,
-    news: ['aaa', 'bbb', 'ccc'],
-    templatedata: {
-      index: 0,
-      msg: 'this is a template',
-      time: '2016-09-15'
-    }
+    testArray:[{
+        title:'事件',
+        message:'../mytest/eventTest/eventTest'
+      },{
+        title: 'second',
+        message:'second'
+      }
+    ]
+    
+  },
+
+  /**
+   * 点击监听
+   */
+  testItemClick: function(options){
+    var tUrl = options.currentTarget.dataset.url;
+    console.log("shuchu:"+ tUrl);
+    wx.navigateTo({
+      url: tUrl,
+    })
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("onLoad")
+    this.setData({
+      title:options.title
+    })
   },
 
   /**
@@ -69,29 +84,5 @@ Page({
    */
   onShareAppMessage: function () {
     
-  },
-
-  btnClick: function () {
-    console.log("按钮被点击了")
-    console.log("isShow:"+this.data.show)
-    var newsData = this.data.news;
-    newsData.shift();
-    this.setData({
-      text:"新内容",
-      show:!this.data.show,
-      news:newsData
-    });
-
-    //跳转新页面    
-    wx.navigateTo({
-      url: '../mytest/mytest?title=欢迎来到测试列表',
-    })
-
-    //关闭当前页面，跳转到应用内的某个页面
-    // wx.redirectTo({
-    //   url: '../mytest/eventTest/eventTest',
-    // })
-
   }
-
 })
