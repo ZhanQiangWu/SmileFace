@@ -32,6 +32,30 @@ App({
       }
     })
   },
+
+  /**
+   * 快递信息查询
+   * com:查询的快递公司编号 eg:中通 zto
+   * no：查询的订单号
+   */
+  queryExpressInfo:function(com,no,cb){
+    var params = "?com" + "=" + com + "&no=" + no + "&dtype=&key=" + "0db82a80d9376fba2b88a7d5ccb22c17";
+    wx.request({
+      url: 'http://v.juhe.cn/exp/index' + params, //接口地址
+      data: {
+        x: '',
+        y: ''
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        //console.log(res.data);
+        cb(res.data);
+      }
+    })
+  },
+
   globalData: {
     userInfo: null
   }

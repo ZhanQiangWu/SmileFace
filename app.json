@@ -4,7 +4,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/mytest/eventTest/eventTest",
-    "pages/mytest/mytest"
+    "pages/mytest/mytest",
+    "pages/mytest/expressQueryTest/expressQuery"
   ],
   "tabBar": {
     "color": "#a9b7b7",

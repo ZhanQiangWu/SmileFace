@@ -1,0 +1,9 @@
+
+<view class='container'>
+  <input placeholder='请输入订单号' bindinput='input'></input>
+  <button bindtap='queryClick'>查询</button>
+  <view wx:for="{{expressInfo.result.list}}">
+    【{{item.datetime}}】{{item.remark}}
+  </view>
+
+</view>

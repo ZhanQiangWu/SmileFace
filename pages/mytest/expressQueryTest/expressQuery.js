@@ -1,41 +1,39 @@
-//测试列表
+
+// 获取应用实例
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    testArray:[{
-        title:'事件',
-        message:'../mytest/eventTest/eventTest'
-      },{
-        title: '快递查询',
-        message:'../mytest/expressQueryTest/expressQuery'
-      }
-    ]
-    
+    expressNum:null,
+    expressInfo:null
   },
 
-  /**
-   * 点击监听
-   */
-  testItemClick: function(options){
-    var tUrl = options.currentTarget.dataset.url;
-    //添加参数，eg ：  ../mytest/expressQueryTest / expressQuery ? title = 快递查询
-    tUrl = tUrl + "?title=" + options.currentTarget.dataset.title;
-    console.log("shuchu:" + tUrl);
-    wx.navigateTo({
-      url: tUrl
-    })
+  input: function(e){
+    this.setData({
+      expressNum:e.detail.value
+    });
+  },
 
+  // 快递查询
+  queryClick: function (e){
+    //456451120742
+    var thispage = this;
+    app.queryExpressInfo('zto',this.data.expressNum,function(data){
+      thispage.setData({
+        expressInfo:data
+      });
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      title:options.title
+    wx.setNavigationBarTitle({
+      title: options.title
     })
   },
 

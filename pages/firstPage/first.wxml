@@ -8,26 +8,26 @@ xxxxxxx
         disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> default </button>
 <button type="primary" bindtap="btnClick" > {{btnText}} </button>
 <view wx:if="{{show}}">{{text}} 1</view>
-<view wx:else>{{text}} 2</view>
+<!-- <view wx:else>{{text}} 2</view> -->
 
-<view wx:for="{{news}}" wx:for-item="itemName" wx:for-index="indexName">
+<!-- <view wx:for="{{news}}" wx:for-item="itemName" wx:for-index="indexName">
   {{indexName}} - {{itemName}}
-</view>  
+</view>   -->
 
-<block wx:if="{{show}}">
+<!-- <block wx:if="{{show}}">
     <view >{{text}} block</view>
     <view >{{text}} block2</view>
-</block>
+</block> -->
 
-<block wx:for="{{['aaa1','bbb2','ccc3']}}">
+<!-- <block wx:for="{{['aaa1','bbb2','ccc3']}}">
     <view >{{index}} block</view>
     <view >{{item}} block2</view>
-</block>
-
+</block> -->
+<!-- 
 <template  is="footer1" data="{{text:'导入的footer的值...'}}" />
-<template is="msgItem" data="{{...templatedata}}"/>
+<template is="msgItem" data="{{...templatedata}}"/> -->
 <!-- 页面跳转 -->
-<navigator url='../mytest/mytest'>跳转到新页面</navigator>
+<!-- <navigator url='../mytest/mytest'>跳转到新页面</navigator> -->
 
  <!-- <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
 
