@@ -21,6 +21,14 @@ Page({
   queryClick: function (e){
     //456451120742
     var thispage = this;
+    if(this.data.expressNum == null){     
+      wx.showModal({
+        title: '',
+        content: '输入结果为空，请重新输入',
+        showCancel:false
+      })
+      return;    
+    }
     app.queryExpressInfo('zto',this.data.expressNum,function(data){
       thispage.setData({
         expressInfo:data

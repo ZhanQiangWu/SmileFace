@@ -4,9 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    text : "内容",
+    text: "内容",
     btnText: "学习列表",
-    show : false,
+    show: false,
     news: ['aaa', 'bbb', 'ccc'],
     templatedata: {
       index: 0,
@@ -26,65 +26,65 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   },
 
   btnClick: function () {
     console.log("按钮被点击了")
-    console.log("isShow:"+this.data.show)
+    console.log("isShow:" + this.data.show)
     var newsData = this.data.news;
     newsData.shift();
     this.setData({
-      text:"新内容",
-      show:!this.data.show,
-      news:newsData
+      text: "新内容",
+      show: !this.data.show,
+      news: newsData
     });
 
     //跳转新页面    
     wx.navigateTo({
-      url: '../mytest/mytest?title=欢迎来到测试列表',
+      url: '/pages/mytest/mytest',
     })
 
     //关闭当前页面，跳转到应用内的某个页面
