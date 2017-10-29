@@ -1,19 +1,20 @@
 {
   "pages": [
-    "pages/tarBarPage/mine/mine",
+    "pages/tarBarPage/home/home",
+    "pages/tarBarPage/user/user",
     "pages/tarBarPage/cart/cart",
     "pages/tarBarPage/category/category",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/mytest/eventTest/eventTest",
     "pages/mytest/mytest",
-    "pages/mytest/expressQueryTest/expressQuery"
+    "pages/mytest/expressQueryTest/expressQuery",
+    "pages/otherPages/login/login"
   ],
   "tabBar": {
     "color": "#a9b7b7",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/tarBarPage/home/home",
         "text": "首页",
         "iconPath": "res/drawable/home_black.png",
         "selectedIconPath": "res/drawable/home_blue.png"
@@ -31,7 +32,7 @@
         "selectedIconPath": "res/drawable/cart_blue.png"
       },
       {
-        "pagePath": "pages/tarBarPage/mine/mine",
+        "pagePath": "pages/tarBarPage/user/user",
         "text": "我",
         "iconPath": "res/drawable/user_black.png",
         "selectedIconPath": "res/drawable/user_blue.png"
@@ -44,9 +45,9 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "networkTimeout" : {
+  "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
   },
-  "debug" : true
+  "debug": true
 }
