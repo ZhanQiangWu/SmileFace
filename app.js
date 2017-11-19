@@ -1,6 +1,14 @@
 //app.js
+
+var Bmob = require('utils/bmob.js')
+// var BmobSocketIo = require('utils/bmobSocketIo.js').BmobSocketIo;
+Bmob.initialize("37dae4fc772e764dd4dfce500e2c22a1", "7c86b2629d6972e3114df547d4b6f44c");
+
+// BmobSocketIo.initialize("37dae4fc772e764dd4dfce500e2c22a1");
+
 App({
   onLaunch: function () {
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -9,6 +17,8 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log("wx.login --- ");
+        console.log(res);
       }
     })
     // 获取用户信息

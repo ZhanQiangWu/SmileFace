@@ -1,4 +1,7 @@
 /* pages/tarBarPage/mine/mine.wxss */
+page{
+  height: 100%
+}
 
 .index-container{
   width: 100%;
@@ -6,14 +9,57 @@
   position: relative;
 }
 
-.index-container image{
+.header{
+  height: 450rpx;
+}
+.backgroundImage{
   width: 100%;
-  height: 550px;
+  height: 350rpx;
+  position: relative;
 }
 
-.nickname{
+.avatar{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%; 
+  border-width: 7rpx;
+  border-color: whitesmoke;  
+  border-style: solid;   
+  background-color: whitesmoke;  
   position: absolute;
-  top: 170px;
-  left: 120px;
-  font-size: 25px;
+  bottom: -100rpx;
+  left: 40rpx;
 }
+
+.userName{
+  position: absolute;
+  bottom: -50rpx;
+  left: 230rpx;
+  font-weight: 700;
+  color: #aaa;
+}
+
+.testitem{
+  display: flex;
+  height: 100rpx;
+  background-color: #6495ed;
+  margin-top:10rpx;
+  
+  /* 定义子元素在侧轴上对齐的方式 */
+  align-items: center; 
+  /* 定义子元素在主轴上面的对齐方式 */
+  justify-content: center
+}
+
+.loginButton{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: red;
+  color: white;
+}
+
+
+
+

@@ -1,13 +1,57 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view >
+
+  <view class='selection'>
+      <swiper indicator-dots="true" style='width:100%'
+        autoplay="true" interval="2000" duration="1000">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150"/>
+          </swiper-item>
+        </block>
+      </swiper>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  
+
+  <view class='selection'>
+      <view class='header'>
+        <text>精品推荐</text>
+        <text class='text-all'>全部精品</text>
+      </view>
+
+      <view class='content'>
+        <view class='content-item' wx:for='{{contentItems}}'>
+          <image src='../../../res/drawable/category_blue.png' />
+          <view class ='content-item-text'>
+            <text>这里是标题</text>
+          </view>
+        </view>
+
+      </view>
   </view>
+
+  <view class='selection'>
+
+      <view class='header'>
+        <text>热门评测</text>
+        <text class='text-all'>全部评测</text>
+      </view>
+
+      <view class='list-item' wx:for='{{listItem}}'>
+          <view class='list-item-image'>
+              <image class='list-item-image' src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'/>
+              <image src='../../../res/drawable/wechat.png' class='avatar'/>
+          </view>
+          <view class='list-item-text'>
+              <view class='list-item-text-title'>
+                <text>标题标题标题</text>
+              </view>
+              <view class='list-item-text-content'>
+                <text>这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容</text>
+              </view>
+          </view>
+      </view>
+  
+  </view>
+
 </view>

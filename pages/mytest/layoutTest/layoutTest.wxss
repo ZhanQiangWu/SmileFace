@@ -1,0 +1,25 @@
+/* pages/mytest/layoutTest/layoutTest.wxss */
+page{
+  height: 100%
+}
+
+.container{
+  /* position: fixed;  */
+  height: 100%;
+  width: 100%;
+  background-color: orange;
+  
+  display: flexl;
+  /* flex-direction: row; 决定元素排列方向 column 纵向，row 横向 */
+  /* flex-wrap: wrap; 决定元素如何换行（排列不下时） wrap 换行，nowrap 不换行 */
+  flex-flow: wrap row; /*flex-direction 和 flex-wrap 的组合  */
+  justify-content: flex-start;
+  
+}
+
+.item{
+    width: 100rpx;
+    height: 100rpx;
+    background-color: greenyellow;
+    border: 1px solid #fff;
+}

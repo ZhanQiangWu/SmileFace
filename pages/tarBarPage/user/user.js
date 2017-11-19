@@ -7,7 +7,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-      username : null
+      userInfo : {
+        avatarUrl: '../../../res/drawable/user_black.png'
+      },
+      hasUserInfo:false,
+      testArray: [{
+          title: '事件',
+          message: '../mytest/eventTest/eventTest'
+        }, {
+          title: '快递查询',
+          message: '../mytest/expressQueryTest/expressQuery'
+        }, {
+          title: '布局基础',
+          message: '../mytest/layoutTest/layoutTest'
+        }
+      ]
 
   },
 
@@ -15,16 +29,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if(app.globalData.userInfo == null){
-      // wx.navigateTo({
-      //   url: '/pages/otherPages/login/login',
-      // })
-      wx.navigateTo({
-        url: '../../otherPages/login/login',
-      })
-    } else {
-      this.setData({ username: app.globalData.userinfo.username })
-    }
+    // if(app.globalData.userInfo == null){
+    //   // wx.navigateTo({
+    //   //   url: '/pages/otherPages/login/login',
+    //   // })
+    //   wx.navigateTo({
+    //     url: '../../otherPages/login/login',
+    //   })
+    // } else {
+    //   this.setData({ username: app.globalData.userinfo.username })
+    // }
+
+    // wx.navigateTo({
+    //   url: '../../otherPages/login/login',
+    // })
+  },
+
+  getUserInfo : function(e){
+      console.log("获取用户数据----->");
+      console.log(e);
+      app.globalData.userInfo = e.detail.userInfo;
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      });
   },
 
   /**

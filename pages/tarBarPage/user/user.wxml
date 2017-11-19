@@ -1,7 +1,28 @@
 
 <view class="index-container">
-   <image  src="/res/drawable/uc.jpg" ></image>
-   <view class="nickname">
-      {{username}}
+   <!-- <image  src="/res/drawable/uc.jpg" ></image> -->
+   <view class="header">
+      <view class='backgroundImage'>
+          <image class='backgroundImage' mode='center' src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'/>
+          <image class='avatar' src='{{userInfo.avatarUrl}}'  /> 
+          <text wx:if="{{hasUserInfo}}" class='userName'>{{userInfo.nickName}}</text>
+      </view>
    </view>
+
+   <view class="selection" wx:if="{{!hasUserInfo}}">
+      <view >
+          <button class='loginButton' open-type='getUserInfo' bindgetuserinfo='getUserInfo' >登录并绑定微信号</button>
+      </view>
+   </view>
+
+   <view class="selection" wx:if="{{hasUserInfo}}">
+      <view wx:for="{{testArray}}">
+        <view class='testitem' bindtap='testItemClick' data-url='{{item.message}}' data-title='{{item.title}}'>
+          {{index}}:{{item.title}}
+        </view>
+      </view>
+   </view>
+
+
+   
 </view>

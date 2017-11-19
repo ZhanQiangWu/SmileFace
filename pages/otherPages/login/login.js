@@ -1,4 +1,5 @@
 
+var Bmob = require('../../../utils/bmob.js');
 
 var app = getApp();
 Page({
@@ -20,20 +21,50 @@ Page({
     })
   },
 
-  loginBtnClick: function(){
-      app.globalData.userInfo = {
-        username: this.data.username,
-        password: this.data.password
-      }
-      console.log(app.globalData);
-      
-      wx.navigateBack({
-        
-      })
-      
+  formSubmit:function(event){
+      wx.showLoading({
+        title: '正在注册...',
+      });
 
-      
+      var accoutPswd = event.detail.value.accountPswd;
+      var accoutName = event.detail.value.accountName;
+
+      if(accoutName !="" && accoutPswd != ""){
+          var user = new Bmob.User();
+          user.set("username", accoutName);
+          user.set("password", accoutPswd);
+          user.signUp(null, {
+            success: function (res) {
+                wx.hideLoading();
+                console.log(res);
+            },
+            error: function (userData, error) {
+                console.log(userData);
+                console.log(error);
+            },
+            complete: function (userData) {
+              
+            }
+          });
+      }
+      console.log(event);
   },
+
+  // loginBtnClick: function(){
+  //     wx.showLoading({
+  //       title: '正在注册...',
+  //     });
+  //     app.globalData.userInfo = {
+  //       username: this.data.username,
+  //       password: this.data.password
+  //     }
+  //     console.log(app.globalData);
+      
+  //     // wx.navigateBack({
+        
+  //     // })
+    
+  // },
 
   usernameInput: function(event){
       this.setData({

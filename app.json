@@ -8,6 +8,7 @@
     "pages/mytest/eventTest/eventTest",
     "pages/mytest/mytest",
     "pages/mytest/expressQueryTest/expressQuery",
+    "pages/mytest/layoutTest/layoutTest",
     "pages/otherPages/login/login"
   ],
   "tabBar": {
